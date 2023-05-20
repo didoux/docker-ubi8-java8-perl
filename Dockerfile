@@ -2,6 +2,8 @@
 # docker build . -t ubi/ubi8-openjava8-perl:8.8
 #
 FROM registry1.dso.mil/ironbank/redhat/ubi/ubi8:8.8
+RUN dnf -y install diffutils
+RUN dnf -y --allowerasing install perl
 
 RUN cat <<EOF > /etc/yum.repos.d/adoptium.repo
 [Adoptium]
@@ -14,9 +16,7 @@ EOF
 
 RUN dnf -y install temurin-8-jdk
 
-RUN yum -y --allowerasing install perl
 
-RUN yum -y diffutil
 
 RUN echo Verifying install ... \
     && echo perl --version && perl --version \
