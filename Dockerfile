@@ -16,6 +16,8 @@ RUN dnf -y install temurin-8-jdk
 
 RUN yum -y --allowerasing install perl
 
+RUN yum -y diffutil
+
 RUN echo Verifying install ... \
     && echo perl --version && perl --version \
     && echo java -version && java -version \

@@ -47,3 +47,8 @@ Modular Perl in Red Hat Enterprise Linux 8
 https://developers.redhat.com/articles/2022/03/10/modular-perl-red-hat-enterprise-linux-8# 
 
 yum --allowerasing install perl
+
+Missing diff
+From: https://command-not-found.com/diff
+
+yum install diffutils
